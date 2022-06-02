@@ -1,0 +1,174 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Game service",
+    "description": "Game service"
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "paths": {
+    "/games": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "summary": "Get all game",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of game"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Game"
+        ],
+        "summary": "save a game  (create or update)",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "path",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "new item"
+          }
+        }
+      }
+    },
+    "/games/{id}": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "summary": "Get game by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "game"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Game"
+        ],
+        "summary": "delete game by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "number of game deleted"
+          }
+        }
+      }
+    },
+    "/players": {
+      "get": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "Get all player",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "limit"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "list of player"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "save a player  (create or update)",
+        "parameters": [
+          {
+            "in": "body",
+            "name": "path",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "new item"
+          }
+        }
+      }
+    },
+    "/players/{id}": {
+      "get": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "Get player by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "player"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Player"
+        ],
+        "summary": "delete player by id",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "number of player deleted"
+          }
+        }
+      }
+    }
+  }
+}

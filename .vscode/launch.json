@@ -1,0 +1,80 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "args": [
+                "--timeout",
+                "999999",
+                "--colors",
+                "--recursive",
+                "${workspaceFolder}/game-service/test"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "name": "game-service tests",
+            "program": "${workspaceFolder}/game-service/node_modules/mocha/bin/_mocha",
+            "outFiles": [  //without this it wont break on break point
+                "${workspaceFolder}/game-service/**/*.js"
+            ],
+            "cwd": "${workspaceFolder}/game-service",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+        },
+        {
+            "args": [
+                "--timeout",
+                "999999",
+                "--colors",
+                "--recursive",
+                "${workspaceFolder}/players-service/test"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "name": "players-service tests",
+            "program": "${workspaceFolder}/players-service/node_modules/mocha/bin/_mocha",
+            "outFiles": [  //without this it wont break on break point
+                "${workspaceFolder}/players-service/**/*.js"
+            ],
+            "cwd": "${workspaceFolder}/players-service",
+            "request": "launch",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "node",
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "game-service",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/game-service/index.js",
+            "cwd": "${workspaceFolder}/game-service",
+            "runtimeExecutable": "nodemon",
+            "restart": true
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "players-service",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/players-service/index.js",
+            "cwd": "${workspaceFolder}/players-service",
+            "runtimeExecutable": "nodemon",
+            "restart": true
+        },
+    ],
+    "compounds": [
+        {
+            "name": "run-all",
+            "configurations": ["game-service","players-service"]
+        }
+    ]
+}

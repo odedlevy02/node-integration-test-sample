@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "typescript",
+			"tsconfig": "game-service/tsconfig.json",
+			"option": "watch",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"group": "build",
+			"label": "game-service"
+		},
+		{
+			"type": "typescript",
+			"tsconfig": "players-service/tsconfig.json",
+			"option": "watch",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"group": "build",
+			"label": "players-service"
+		},
+		{
+			"label": "build-all",
+			"dependsOn": ["game-service","players-service"],
+			"problemMatcher": [],
+		}
+	],
+}

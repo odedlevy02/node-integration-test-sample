@@ -1,0 +1,11 @@
+node_modules
+*.js
+*.orig
+*.js.map
+npm-debug.log
+**/temp/*
+dist
+!ormconfig.js
+.DS_Store
+coverage
+.nyc_output

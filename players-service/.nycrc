@@ -1,0 +1,28 @@
+{
+    "cache": false,
+    "check-coverage": false,
+    "extension": [
+        ".ts"
+    ],
+    "include": [
+        "**/*.js",
+        "**/*.ts"
+    ],
+    "exclude": [
+        "coverage/**",
+        "node_modules/**",
+        "**/*.d.ts",
+        "**/*.test.ts",
+        "test/**",
+        "index.ts",
+        "server.ts",
+        "**/serviceErrorReducer.ts"
+    ],
+    "sourceMap": true,
+    "reporter": [
+        "text",
+        "text-summary"
+    ],
+    "all": true,
+    "instrument": true
+}

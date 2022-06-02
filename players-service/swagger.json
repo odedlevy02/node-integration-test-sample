@@ -1,0 +1,210 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Players service",
+        "description": "Players service"
+    },
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "paths": {
+        "/players": {
+            "get": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "Get all player",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list of player"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "save a player  (create or update)",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "path",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                },
+                                "gameId": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "new item"
+                    }
+                }
+            }
+        },
+        "/players/{id}": {
+            "get": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "Get player by id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "player"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "delete player by id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "number of player deleted"
+                    }
+                }
+            }
+        },
+        "/players/game/{id}": {
+            "get": {
+                "tags": [
+                    "Players"
+                ],
+                "summary": "Get all players by game id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list of players"
+                    }
+                }
+            }
+        },
+        "/rooms": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Get all rooms",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "limit"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "list of rooms"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "save a room  (create or update)",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "path",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "name": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "new item"
+                    }
+                }
+            }
+        },
+        "/rooms/{id}": {
+            "get": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "Get room by id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "room"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "delete room by id",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "number of room deleted"
+                    }
+                }
+            }
+        },
+        "/rooms/map-players": {
+            "post": {
+                "tags": [
+                    "Rooms"
+                ],
+                "summary": "map players to rooms",
+                "parameters": [],
+                "responses": {
+                    "200": {
+                        "description": "success"
+                    }
+                }
+            }
+        }
+    }
+}
